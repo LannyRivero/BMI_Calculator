@@ -2,7 +2,8 @@ package dev.lanny.bmi_calculator.model;
 
 public enum BMICategory {
     NORMAL("Peso Normal", 18.5, 25),
-    OVERWEIGHT("Sobrepeso", 25, 30);
+    OVERWEIGHT("Sobrepeso", 25, 30),
+    OBESITY_I("Obesidad tipo I", 30, 35);
     
 
     private final String description;
@@ -22,9 +23,11 @@ public enum BMICategory {
         if (bmi >= 25 && bmi < 30) {
             return "Sobrepeso";
         }
+        if (bmi >= 30 && bmi < 35) {
+            return "Obesidad tipo I";
+        }
         return "Valor inválido";
     }
-
     
 }
 
