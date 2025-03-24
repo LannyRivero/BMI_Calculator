@@ -20,4 +20,10 @@ public class BMICategoryTest {
         assertThat(BMICategory.getCategory(27.0), is("Sobrepeso"));
     }
 
+    @Test
+    @DisplayName("Should return 'Obesity class I' when BMI is between 30 and 35")
+    void test_BMICategory_Obesity_I() {
+        assertThat(BMICategory.getCategory(32.0), is("Obesidad tipo I"));
+    }
+
 }
