@@ -2,6 +2,7 @@ package dev.lanny.bmi_calculator.model;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.closeTo;
+import static org.hamcrest.Matchers.is;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
@@ -26,6 +27,14 @@ public class BMICalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> calculator.calculateBMI(70, 0));
         assertThrows(IllegalArgumentException.class, () -> calculator.calculateBMI(-70, 1.75));
         assertThrows(IllegalArgumentException.class, () -> calculator.calculateBMI(70, -1.75));
+    }
+
+    @Test
+    @DisplayName("Validate return BMI category based on BMI value")
+    void test_Get_BMI_Category() {
+        BMICalculator calculator = new BMICalculator();
+        String category = calculator.getBMICategory(22.0);
+        assertThat(category, is("Peso Normal"));
     }
 
 }
