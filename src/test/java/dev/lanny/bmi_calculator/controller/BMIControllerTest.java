@@ -16,4 +16,12 @@ public class BMIControllerTest {
         assertThat(result, closeTo(22.86, 0.01));
     }
 
+    @Test
+    @DisplayName("Validate return BMI category based on weight and height")
+    void test_Get_BMI_Category_From_Controller() {
+        BMIController controller = new BMIController();
+        String category = controller.getBMICategory(70, 1.75);
+        assertThat(category, is("Peso Normal"));
+    }
+
 }
