@@ -32,4 +32,10 @@ public class BMICategoryTest {
         assertThat(BMICategory.getCategory(37.0), is("Obesidad tipo II"));
     }
 
+    @Test
+    @DisplayName("Validate return 'Obesity class III' when BMI is greater than or equal to 40")
+    void test_BMICategory_Obesity_III() {
+        assertThat(BMICategory.getCategory(42.0), is("Obesidad tipo III"));
+    }
+
 }
