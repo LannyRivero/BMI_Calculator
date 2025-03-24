@@ -38,4 +38,10 @@ public class BMICategoryTest {
         assertThat(BMICategory.getCategory(42.0), is("Obesidad tipo III"));
     }
 
+    @Test
+    @DisplayName("VAlidate return 'Mild thinness' when BMI is between 17 and 18.5")
+    void test_BMICategory_Mild_Thinness() {
+        assertThat(BMICategory.getCategory(17.5), is("Delgadez leve"));
+    }
+
 }
