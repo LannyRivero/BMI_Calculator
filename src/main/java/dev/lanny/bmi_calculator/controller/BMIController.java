@@ -14,4 +14,9 @@ public class BMIController {
         return calculator.calculateBMI(weight, height);
     }
 
+    public String getBMICategory(double weight, double height) {
+        double bmi = calculateBMI(weight, height);
+        return calculator.getBMICategory(bmi);
+    }
+
 }
