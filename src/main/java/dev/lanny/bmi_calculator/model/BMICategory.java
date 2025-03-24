@@ -6,8 +6,8 @@ public enum BMICategory {
     OBESITY_I("Obesidad tipo I", 30, 35),
     OBESITY_II("Obesidad tipo II", 35, 40),
     OBESITY_III("Obesidad tipo III", 40, Double.MAX_VALUE),
-    MILD_THINNESS("Delgadez leve", 17, 18.5);
-    
+    MILD_THINNESS("Delgadez leve", 17, 18.5),
+    MODERATE_THINNESS("Delgadez moderada", 16, 17);
 
     private final String description;
     private final double min;
@@ -38,9 +38,11 @@ public enum BMICategory {
         if (bmi >= 17 && bmi < 18.5) {
             return "Delgadez leve";
         }
-        
+        if (bmi >= 16 && bmi < 17) {
+            return "Delgadez moderada";
+        }
+
         return "Valor inválido";
     }
-    
-}
 
+}
