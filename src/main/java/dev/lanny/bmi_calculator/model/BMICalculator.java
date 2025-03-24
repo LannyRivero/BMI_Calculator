@@ -8,4 +8,8 @@ public class BMICalculator {
         }
         return weight / Math.pow(height, 2);
     }
+
+    public String getBMICategory(double bmi) {
+        return BMICategory.getCategory(bmi);
+    }
 }
