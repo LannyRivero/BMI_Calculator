@@ -44,4 +44,10 @@ public class BMICategoryTest {
         assertThat(BMICategory.getCategory(17.5), is("Delgadez leve"));
     }
 
+    @Test
+    @DisplayName("Validate return 'Moderate thinness' when BMI is between 16 and 17")
+    void test_BMICategory_Moderate_Thinness() {
+        assertThat(BMICategory.getCategory(16.5), is("Delgadez moderada"));
+    }
+
 }
