@@ -56,4 +56,11 @@ public class BMICategoryTest {
         assertThat(BMICategory.getCategory(15.0), is("Delgadez severa"));
     }
 
+    @Test
+    @DisplayName("Validate return 'Invalid value' when BMI is negative or unrealistic")
+    void test_BMICategory_Invalid() {
+        assertThat(BMICategory.getCategory(-3.0), is("Valor inválido"));
+        assertThat(BMICategory.getCategory(1000.0), is("Valor inválido"));
+    }
+
 }
