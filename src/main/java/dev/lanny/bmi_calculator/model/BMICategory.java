@@ -4,7 +4,8 @@ public enum BMICategory {
     NORMAL("Peso Normal", 18.5, 25),
     OVERWEIGHT("Sobrepeso", 25, 30),
     OBESITY_I("Obesidad tipo I", 30, 35),
-    OBESITY_II("Obesidad tipo II", 35, 40);
+    OBESITY_II("Obesidad tipo II", 35, 40),
+    OBESITY_III("Obesidad tipo III", 40, Double.MAX_VALUE);
     
 
     private final String description;
@@ -29,6 +30,9 @@ public enum BMICategory {
         }
         if (bmi >= 35 && bmi < 40) {
             return "Obesidad tipo II";
+        }
+        if (bmi >= 40) {
+            return "Obesidad tipo III";
         }
         
         return "Valor inválido";
