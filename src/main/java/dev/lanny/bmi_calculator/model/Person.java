@@ -5,11 +5,16 @@ public class Person {
     private double height;
 
     public Person(double weight, double height) {
-        if (weight <= 0 || height <= 0) {
-            throw new IllegalArgumentException("El peso y la altura deben ser mayores que cero.");
-        }
+        validateValue(weight, "El peso debe ser mayor que cero.");
+        validateValue(height, "La altura debe ser mayor que cero.");
         this.weight = weight;
         this.height = height;
+    }
+
+    private void validateValue(double value, String message) {
+        if (value <= 0) {
+            throw new IllegalArgumentException(message);
+        }
     }
 
     public double getWeight() { return weight; }
